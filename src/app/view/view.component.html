@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dd">
+    <table id="details">
+    <h1>Contact Details</h1>
+    <tr>
+        <th>s.n0</th>
+         <th>FIRSTNAME</th>
+          <th>LASTNAME</th>
+           <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th>ADDRESS</th>
+            <th>EDIT | DELETE</th>
+    </tr>
+    <tr *ngFor="let details of contactlist;let i=index; ">
+        <td>{{i+1}}</td>
+    <!-- firstname -->
+ <td>
+    <div *ngIf="details.isedit">
+    <input type="text" [(ngModel)]= "details.firstname" class="formcontrol"  />
+    </div>
+    <div *ngIf="!details.isedit">
+    {{details.firstname}}
+    </div>
+ </td>
+ <!-- lastname -->
+        <td>
+            <div *ngIf="details.isedit">
+            <input type="text" [(ngModel)]= "details.lastname" class="formcontrol"  />
+            </div>
+            <div *ngIf="!details.isedit">
+                {{details.lastname}}
+            </div>
+        </td>
+ <!-- email -->
+        <td>
+            <div *ngIf="details.isedit">
+            <input type="text" [(ngModel)]= "details.email" class="formcontrol"  />
+            </div>
+            <div *ngIf="!details.isedit">
+                {{details.email}}
+            </div>
+        </td>
+<!-- password -->
+        <td>
+            <div *ngIf="details.isedit">
+                <input type="text" [(ngModel)]= "details.password" class="formcontrol"  />
+            </div>
+            <div *ngIf="!details.isedit">
+                {{details.password}}
+            </div>
+        </td>
+<!-- address -->
+        <td>
+            <div *ngIf="details.isedit" >
+                <input type="text" [(ngModel)]= "details.Address" class="formcontrol"  />
+            </div>
+            <div *ngIf="!details.isedit" >
+                {{details.Address}}
+            </div>
+        </td>
+          <td>
+            <div *ngIf="details.isedit">
+<button (click)="update(details._id,details.firstname,details.lastname)" id="btn1">update</button>
+<button (click)="closeedit(details)" >cancel</button>
+            </div>
+<div *ngIf="!details.isedit">
+    <button id="btn1" (click)="onedit(details)">edit</button>
+    <button (click)="deleteUser(details._id)" id="btn2">delete</button>
+</div>
+    </td>
+    </tr>
+</table>
+</div>
+</body>
+</html>

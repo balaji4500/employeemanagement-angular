@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"  >
+        <b>please apply here</b>
+        <form [formGroup]="ngForm" (ngSubmit)= "onClickSubmit(ngForm.value)" class="form" >
+            <mat-form-field class="example">
+                <mat-label><b>Firstname</b></mat-label>
+          <input type="text" name="firstname" matInput placeholder="firstname"  formControlName="firstname" >
+         <mat-error *ngIf="submit && fu['firstname'].errors"><i>* please enter the firstname *</i>* </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example">
+                <mat-label><b>Lastname</b></mat-label>
+                  <input type="text" name="lastname" matInput placeholder="lastname" formControlName="lastname" >
+                      <mat-error  *ngIf = "submit && fu['lastname'].errors"><i>*please enter the lastname*</i></mat-error>
+               </mat-form-field>
+     <mat-form-field class="example">
+        <mat-label><b>Email</b></mat-label>
+        <input type="email" name="email" matInput placeholder="email" formControlName="email"  >
+        <mat-error *ngIf=" submit && fu['email'].errors"><i>* please enter the email *</i></mat-error>
+       </mat-form-field>
+<mat-form-field class="example">
+        <mat-label><b>Password</b></mat-label>
+        <input type="password" name="password"matInput placeholder="password" formControlName="password" >
+        <mat-error *ngIf="submit && fu['password'].errors"><i>* please enter the password *</i></mat-error>
+</mat-form-field>
+<mat-form-field class="example">
+        <mat-label><b>Address</b></mat-label>
+        <input type="text" name="address"  matInput placeholder="Address" formControlName="Address"  required>
+        <mat-error *ngIf="submit && fu['Address'].errors" ><i>* please give the address *</i></mat-error>
+</mat-form-field>
+        <input type="submit" value="submit" id="btn">
+        </form>
+    </div>
+
+</body>
+</html>

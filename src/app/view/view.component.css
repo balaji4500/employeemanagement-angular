@@ -1,0 +1,52 @@
+table,td{
+    border: 1px solid black;
+    color: rgb(17, 17, 17);
+    font-weight: 100;
+    background-color: rgb(253, 250, 245);
+    box-shadow:  6px 6px  #52394b;
+    padding: 4px;
+ 
+}
+table{
+    border-radius: 10px;
+}
+h1{
+    font-weight: bold;
+    color: rgb(123, 49, 192);
+
+}
+td:hover{
+    background-color: rgb(149, 58, 235);
+    color:white;
+    font-weight: 500;
+}
+#dd{
+    margin-left: 350px;
+    margin-top: 100px;
+
+}
+
+#btn1{
+    color: white;
+    background-color: green;
+}
+#btn1:hover{
+    background-color: rgb(8, 161, 8);
+    cursor: pointer;
+
+
+}
+#btn2{
+    color: white;
+    background-color: red;
+}
+#btn2:hover{
+    background-color: rgb(248, 56, 56);
+    cursor: pointer;
+
+}
+.formcontrol{
+    width:95px;
+    padding: 2px;
+    
+}
